@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "animate.css": "^4.1.0",
-    "axios": "^0.17.1",
+    "axios": "^0.21.1",
     "core-js": "^3.6.4",
     "leaflet-gpx": "^1.0.0",
     "lodash": "^4.15.5",

@@ -1,0 +1,320 @@
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $text-secondary;
+  font-family: "Hind Madurai", sans-serif;
+  z-index: 999;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(255, 234, 237, 0);
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(107, 107, 107, 0.685);
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(85, 85, 85, 0.836);
+}
+
+body {
+  height: 100vh;
+  margin: 0px;
+  overflow: hidden;
+}
+
+#particles-js {
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.centered {
+  position: absolute;
+  display: flex;
+  height: 96%;
+  margin: 0px 0px 0px 0px;
+}
+.router-view {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  margin-top: 40px;
+}
+
+.dashboard-panes {
+  .dashboard-pane {
+    margin: 20px;
+    background-color: $pane;
+    width: calc(100% - 40px);
+  }
+}
+
+.task-header {
+  text-align: center;
+}
+
+.checklist-container,
+.page-container {
+  margin: 20px;
+  border: 1px;
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    li {
+      background-color: $pane;
+      color: $header-grey;
+      text-align: left;
+      font-size: 0.95em;
+      padding: 2px;
+      vertical-align: middle;
+      transition: $animation-short;
+    }
+    li:hover {
+      background-color: $light-pane;
+    }
+  }
+}
+
+.editor-icon {
+  transition: $animation-short;
+  color: $border-grey;
+}
+.inactive {
+  color: $input-grey;
+  &:hover {
+    color: $input-grey !important;
+  }
+}
+.delete:hover {
+  color: $delete-red;
+}
+.edit:hover {
+  color: $edit-yellow;
+}
+.bold-edit:hover {
+  color: $edit-yellow;
+}
+.add:hover {
+  color: $checklist-green-fade;
+}
+
+.info {
+  float: right;
+}
+
+input {
+  width: 400px;
+  height: 37px !important;
+  border: 0;
+  padding: 10px;
+  font-size: 1em;
+  background-color: #506e6e;
+  color: rgb(255, 255, 255);
+  transition: $animation-short;
+  letter-spacing: 0.5px;
+  border-radius: 5px;
+  &:focus {
+    outline: none;
+    letter-spacing: 0px;
+    color: rgb(255, 255, 255);
+  }
+}
+::placeholder {
+  color: rgba(255, 255, 255, 0.877);
+  opacity: 0.9;
+}
+.input-label {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  color: $border-grey;
+}
+
+.modal-card {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 300px;
+  padding: 20px;
+  position: fixed;
+  background-color: black;
+  align-items: center;
+  justify-content: space-between;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  border: 1px solid $border-grey-fade;
+  .modal-card-title {
+    margin: 0px 0px 10px 0px;
+    font-weight: bold;
+  }
+
+  .modal-card-divider {
+    border-bottom: 1px solid $border-grey-fade;
+    margin: 0px 0px 20px 0px;
+    width: 440px;
+  }
+  .modal-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 60px;
+    h5 {
+      text-align: center;
+      font-size: 0.8rem;
+    }
+  }
+  .error {
+    color: rgb(255, 98, 125);
+    transition: $animation;
+    border-top: 1px solid $delete-red;
+    width: 97%;
+    text-align: left;
+    font-size: 0.8rem;
+  }
+}
+.modal-background {
+  position: absolute;
+  z-index: 3;
+  top: -100;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: $modal-dark;
+  transition: opacity $animation;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  width: 270px;
+  justify-content: space-around;
+}
+.op-selector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 70px;
+  width: 100%;
+  h5 {
+    text-align: center;
+    font-size: 0.8rem;
+  }
+  .options {
+    display: grid;
+    grid-template-areas: ".option .option";
+    grid-template-columns: 50% 50%;
+    border: 1px solid $border-grey-fade;
+    border-radius: 5px;
+    justify-items: center;
+    min-width: 100%;
+    height: 37px;
+  }
+  .option {
+    transition: $animation-short;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    h4,
+    .editor-icon {
+      transition: $animation-short;
+      color: $input-grey;
+    }
+    &:hover {
+      h4,
+      .editor-icon {
+        color: $text-secondary;
+      }
+    }
+  }
+  .active-option {
+    transform: scale(1.02);
+    h4 {
+      color: $text-secondary;
+    }
+    .add {
+      color: $checklist-green-fade !important;
+    }
+    .edit {
+      color: $edit-yellow !important;
+    }
+  }
+}
+.is-active {
+  position: fixed;
+  width: 100%;
+  padding: 20px;
+}
+
+select {
+  height: 100%;
+  color: white;
+  background-color: #c2ffff48;
+  background: #c2ffff48;
+}
+button {
+  display: flex;
+  font-family: "Hind Madurai", sans-serif;
+  text-transform: uppercase;
+  align-items: center;
+  justify-content: center;
+  min-height: 37px;
+  min-width: 100px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 0.05rem;
+  color: $button-text;
+  border: 0px;
+  padding: 8px;
+  transition: $animation-short;
+  background: $button-hover;
+  border: 1px solid $border-grey-fade;
+  .editor-icon {
+    margin-right: 5px;
+    padding: 0px 2px 0px 2px;
+  }
+  .add {
+    color: $checklist-green-fade;
+  }
+  .delete {
+    color: $delete-red;
+  }
+  .info {
+    color: $edit-yellow;
+  }
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    background: $button;
+    .flipX {
+      transform: rotateX(180deg);
+    }
+    .flipY {
+      transform: rotateY(180deg);
+    }
+    .rotate {
+      transform: rotate(-0.5turn);
+    }
+    .rotate-full {
+      transform: rotate(1turn);
+    }
+  }
+}
+.button-invisible {
+  background-color: transparent;
+  // border: 2px solid $header-grey
+}

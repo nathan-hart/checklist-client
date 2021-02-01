@@ -1,0 +1,80 @@
+
+
+OPERATOR CHECKLIST SNIPPETS
+    // checklist: [{
+      //   pages: []
+      // }],
+      // checklist: {
+      //   checklistName: "",
+      //   satellite: "",
+      //   pages: [
+      //     { pageName: "" },
+      //     { editing: true },
+      //     { tasks: [{ taskName: "" }, { bold: false }, { done: false }] }
+      //   ]
+      // },
+
+ <!-- <select v-model="selectedSatellite">
+<option selected disabled>Select Satellite</option>
+<option v-for="satellite in satellites" :key="satellite">{{satellite}}</option>
+</select>  -->
+<!-- <input type="radio" v-for="satellite in satellites" :key="satellite" v-model="selectedSatellite"> -->
+
+APP - Sidenav CSS
+.toggle-menu {
+//   padding: 20px;
+//   transition: all 0.7s ease-in-out;
+//   &:hover {
+//     color: yellow;
+//   }
+// }
+
+// .nav-link {
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+//   justify-content: space-between;
+//   padding: 10px 10px 10px 20px;
+//   width: 180px;
+//   transition: all 0.7s ease;
+//   background-color: black;
+//   .icon {
+//     color: $header-grey;
+//   }
+//   // h6 {
+//   //   visibility: hidden;
+//   // }
+// }
+// .nav-link-active {
+//   padding: 0px;
+//   width: 200px;
+//   background-color: $pane;
+// }
+// .nav-link:hover {
+//   padding: 10px 20px 10px 20px;
+//   .icon {
+//     color: yellow;
+//   }
+// }
+
+
+//CSS
+// border-image-source: linear-gradient(80deg, rgba(255, 255, 255, 0), $border-grey);
+  // border-image-source: linear-gradient(80deg, $header-grey, rgba(255, 255, 255, 0));
+  // border-image-source: linear-gradient(80deg, grey, white);
+
+  // background: radial-gradient(
+  //   ellipse at bottom,
+  //   $background-fade 40%,
+  //   #131313 100%
+  // );
+  // background: rgba(15, 43, 58, 1);
+  // background: linear-gradient(
+  //   305deg,
+  //   rgba(19, 19, 19, 1) 0%,
+  //   rgba(15, 43, 58, 1) 44%
+  // );
+
+  // background-image: url("~@/assets/night-sky-background1.jpg");
+  // background-size: 100%;
+  // background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);

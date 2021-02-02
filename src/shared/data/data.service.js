@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = "http://localhost:1000/api/v1/checklists";
+const API = "http://localhost:80/api/v1/checklists";
 
 const getChecklists = async function() {
   const res = await axios.get(`${API}`);

@@ -23,7 +23,7 @@ Vue.use(VueParticles);
 Vue.use(VueMoment, { moment }, VueAwesomeSwiper);
 Vue.component("v-icon", Icon);
 
-const API = "http://localhost:1000/api/v1/checklists";
+const API = "http://localhost:80/api/v1/checklists";
 
 async function initData() {
   try {
